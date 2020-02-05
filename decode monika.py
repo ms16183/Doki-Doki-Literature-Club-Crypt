@@ -15,8 +15,8 @@ def bits2text(bits):
     # 1byteの文字列
     byte = ""
     for i, bit in enumerate(bits):
-        
-        # 1byte = 8bit毎に出力データとしてまとめる． 
+
+        # 1byte = 8bit毎に出力データとしてまとめる．
         if i != 0 and i % 8 == 0:
             byte = "0b" + byte
             # 2進数の文字列を数値(unsigned int)にする(e.g. "0b111" -> 7)．
@@ -42,10 +42,20 @@ def main():
 
     # monika.chrの実態はPNGである．
     img = Image.open(fname)
+    # 2値化(閾値: 127)
+    img = img.convert("L")
+    img = img.point(lambda x: 0 if x <= 127 else x)
 
     # Windowsに標準で付いてくるPaintを使って座標を調べてある．
+    # 日本語版と英語版で違うので適宜切り替える．
+
+    # 日本語の場合
     xstart, ystart = 316, 316
     xend, yend = 482, 482
+
+    # 英語の場合
+    xstart, ystart = 330, 330
+    xend, yend = 469, 469
 
     # ピクセルの色を基に0，1のどちらかが入るビット列
     bits = []
@@ -54,16 +64,17 @@ def main():
 
             # (R, G, B, A)
             color = img.getpixel((x, y))
-    
-            if color == (0, 0, 0, 255):
+
+            if color == 0:
                 bits.append(0)
                 continue
-    
-            if color == (255, 255, 255, 255):
+
+            if color == 255:
                 bits.append(1)
                 continue
 
             print("Error: Cannot read color.", file=sys.stderr)
+            print(color, file=sys.stderr)
             exit(1)
 
     # ビット列を文字列に変換する．
