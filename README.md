@@ -7,19 +7,50 @@
 # Usage
 
 - Python3で動作します．
-- monika.chrと同一ファイルで実行してください．
-- ライブラリをインストールしてください．
+- `*.chr`と同一ファイルで実行してください．
+- 以下のライブラリをインストールしてください．
 
 ```
 $ pip3 install pillow librosa soundfile
 ```
+
+## Monika
 
 ```
 $ ls -1
 decode monika.py
 monika.chr
 
-$ python3 "decode monika.py" | nkf -w
+$ python3 "decode monika.py" | nkf -w # utf-8
+```
+
+## Sayori
+
+```
+$ ls -1
+decode sayori.py
+sayori.chr
+
+$ python3 "decode sayori.py"
+```
+
+## Natsuki
+
+## Yuri
+`yuri.chr`に関してはただのbase64です．
+
+```
+$ ls -1
+deocde yuri.py
+yuri.chr
+
+$ python3 "decode yuri.py"
+```
+
+若しくは
+
+```
+$ cat yuri.chr | base64 -d
 ```
 
 # 仕組み
@@ -137,3 +168,7 @@ $ python3 "decode monika.py" | nkf -w
 実はsayori.chrはOGG音楽データである．拡張子をchrからoggに変換してビューアで開くと，黒板を引っ掻くような音が流れる．
 
 この音をスペクトログラムで表示すると，QRコードになる．カメラで読み取ると，とあるWebサイトのリンクである．
+
+<ユリ>
+
+実はyuri.chrはbase64テキストデータである．
