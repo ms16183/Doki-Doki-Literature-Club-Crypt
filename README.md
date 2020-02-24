@@ -35,6 +35,7 @@ $ python3 "decode sayori.py"
 ```
 
 ## Natsuki
+GIMP(画像処理ソフト)にて，`Filters > Distorts > Polor Coordinates`を選択する．
 
 ## Yuri
 `yuri.chr`に関してはただのbase64です．
@@ -168,6 +169,11 @@ $ cat yuri.chr | base64 -d
 実はsayori.chrはOGG音楽データである．拡張子をchrからoggに変換してビューアで開くと，黒板を引っ掻くような音が流れる．
 
 この音をスペクトログラムで表示すると，QRコードになる．カメラで読み取ると，とあるWebサイトのリンクである．
+
+<ナツキ>
+実はnatsuki.chrはPNG画像である．拡張子をchrからpngに変換して画像ビューアで開くと，奇妙な模様が描かれている．
+
+この図を極座標に変換すると，女性のアップショットになる．
 
 <ユリ>
 
