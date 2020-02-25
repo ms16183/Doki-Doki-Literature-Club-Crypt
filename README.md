@@ -11,7 +11,7 @@
 - 以下のライブラリをインストールしてください．
 
 ```
-$ pip3 install pillow librosa soundfile
+$ pip3 install pillow librosa soundfilei opencv-python opencv-contrib-python 
 ```
 
 ## Monika
@@ -35,7 +35,16 @@ $ python3 "decode sayori.py"
 ```
 
 ## Natsuki
-GIMP(画像処理ソフト)にて，`Filters > Distorts > Polor Coordinates`を選択する．
+
+```
+$ ls -1
+decode natsuki.py
+natsuki.chr
+
+$ python3 "decode natsuki.py"
+```
+
+若しくは[GIMP](https://www.gimp.org/)にて，`Filters > Distorts > Polor Coordinates`を選択する．
 
 ## Yuri
 `yuri.chr`に関してはただのbase64です．
@@ -56,6 +65,7 @@ $ cat yuri.chr | base64 -d
 
 # 仕組み
 ネタバレ注意
+
 ```
 
 
@@ -177,4 +187,4 @@ $ cat yuri.chr | base64 -d
 
 <ユリ>
 
-実はyuri.chrはbase64テキストデータである．
+実はyuri.chrはbase64テキストデータである．base64でデコードするとメッセージが出現する．
