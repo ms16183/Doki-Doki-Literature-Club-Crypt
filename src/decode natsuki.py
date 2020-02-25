@@ -18,8 +18,8 @@ def main():
     src = cv2.rotate(src, cv2.ROTATE_90_COUNTERCLOCKWISE)
 
     # 画像を極座標に変換する．
-    center = (src.shape[0]/2, src.shape[1]/2)
-    k = np.sqrt((src.shape[0]/2.0)**2 + (src.shape[1]/2.0)**2)/2.0
+    center = (src.shape[1]/2, src.shape[0]/2)
+    k = np.sqrt((src.shape[1]/2.0)**2 + (src.shape[0]/2.0)**2) * 0.5
     dst = cv2.linearPolar(src, center, k, cv2.WARP_INVERSE_MAP)
 
     # 再度回転させ，顔を見やすくする．
