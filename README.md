@@ -11,8 +11,10 @@
 - 以下のライブラリをインストールしてください．
 
 ```
-$ pip3 install pillow librosa soundfilei opencv-python opencv-contrib-python 
+$ pip3 install pillow librosa soundfilei opencv-python opencv-contrib-python
 ```
+
+実行結果は`result/`に有ります．
 
 ## Monika
 

@@ -1,3 +1,5 @@
 *.chr
 *.wav
 *.png
+
+!result/*
